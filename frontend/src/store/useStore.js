@@ -245,24 +245,24 @@ export const useStore = create((set, get) => {
         set({ ready: true })
         return
       }
-      // Guests never authenticate, so an instance that turned guest mode off has no request to
-      // refuse — the only way the switch reaches someone already inside is here, on their next
-      // boot. Ending the session needs a positive `allow_guest: false`; see lib/guest.js for why
-      // an unreachable server must not be allowed to lock anyone out (#42).
-      const cfg = await get().loadConfig()
-      if (!guestAllowed(cfg)) get().setGuest(false)
+      // Check if there is an active remote server
       try {
+        const cfg = await get().loadConfig()
+        if (cfg && !guestAllowed(cfg)) get().setGuest(false)
         const me = await api('/api/me')
-        get().setUser(me.user)
-        await get().pullState()
-        // Re-stamp the reminder's timezone on every load — keeps it correct if you're travelling,
-        // without needing to revisit Settings.
-        const tz = localTZ()
-        if (get().S.reminder?.on && get().S.reminder.tz !== tz) {
-          get().update(s => { s.reminder = { ...s.reminder, tz } })
+        if (me && me.user) {
+          get().setUser(me.user)
+          await get().pullState()
         }
       } catch (e) {
-        if (e.status === 401) get().setUser(null)
+        // Offline or client-only deployment (Vercel) — keep existing localStorage user/guest
+      }
+
+      // Re-stamp the reminder's timezone on every load — keeps it correct if you're travelling,
+      // without needing to revisit Settings.
+      const tz = localTZ()
+      if (get().S.reminder?.on && get().S.reminder.tz !== tz) {
+        get().update(s => { s.reminder = { ...s.reminder, tz } })
       }
       set({ ready: true })
     }

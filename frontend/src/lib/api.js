@@ -19,6 +19,12 @@ export async function api(path, opts) {
   const headers = Object.assign({ 'Content-Type': 'application/json' }, opts && opts.headers)
   if (remoteToken) headers.Authorization = 'Bearer ' + remoteToken
   const r = await fetch(remoteBase + path, Object.assign({}, opts, { headers }))
+  const ct = r.headers.get('content-type') || ''
+  if (ct && !ct.includes('application/json')) {
+    const e = new Error('Not a JSON endpoint')
+    e.status = 404
+    throw e
+  }
   const data = await r.json().catch(() => ({}))
   if (!r.ok) { const e = new Error(data.error || ('HTTP ' + r.status)); e.status = r.status; throw e }
   return data
