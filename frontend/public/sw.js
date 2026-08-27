@@ -1,6 +1,6 @@
 /* Gym Tracker service worker — runtime caching.
    Media cache-first; everything else network-first with offline fallback. */
-const CACHE = 'gymtracker-v2'
+const CACHE = 'gymtracker-v3'
 
 self.addEventListener('install', () => self.skipWaiting())
 self.addEventListener('activate', e => {

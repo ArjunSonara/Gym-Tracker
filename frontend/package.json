@@ -1,7 +1,7 @@
 {
   "name": "gym-tracker-frontend",
   "private": true,
-  "version": "67.67",
+  "version": "1.2.11",
   "type": "module",
   "scripts": {
     "dev": "vite",
