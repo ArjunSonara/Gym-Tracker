@@ -1,6 +1,6 @@
 {
   "name": "gym-tracker-api",
-  "version": "1.2.11",
+  "version": "67.67",
   "private": true,
   "type": "module",
   "main": "server.js",
