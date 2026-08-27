@@ -2,7 +2,7 @@
 
 **Gym Tracker** is an open-source workout and body-weight tracking application.
 
-For support or questions, contact: [fightclubsoap1657@gmail.com](mailto:fightclubsoap1657@gmail.com).
+For support or questions, contact: [arjunsonara1657@gmail.com](mailto:arjunsonara1657@gmail.com).
 
 ---
 

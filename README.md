@@ -6,7 +6,7 @@
 
 Plan your week, run guided workouts, track every set, and monitor your body weight over time — on your phone, desktop, or web browser.
 
-Support: [fightclubsoap1657@gmail.com](mailto:fightclubsoap1657@gmail.com)
+Support: [arjunsonara1657@gmail.com](mailto:arjunsonara1657@gmail.com)
 
 <br>
 
@@ -77,4 +77,4 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 ## 📬 Support & Contact
 
 For questions, issues, or suggestions, please contact:
-**[fightclubsoap1657@gmail.com](mailto:fightclubsoap1657@gmail.com)**
+**[arjunsonara1657@gmail.com](mailto:arjunsonara1657@gmail.com)**

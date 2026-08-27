@@ -19,10 +19,10 @@ ARG VERSION=dev
 ARG VCS_REF=dev
 ARG BUILD_DATE=unknown
 
-LABEL maintainer="Gym Tracker <fightclubsoap1657@gmail.com>" \
+LABEL maintainer="Gym Tracker <arjunsonara1657@gmail.com>" \
     org.opencontainers.image.title="gym-tracker-web" \
     org.opencontainers.image.description="Frontend web container for Gym Tracker." \
-    org.opencontainers.image.licenses="AGPL-3.0-or-later" \
+    org.opencontainers.image.licenses="MIT" \
     org.opencontainers.image.version=$VERSION \
     org.opencontainers.image.revision=$VCS_REF \
     org.opencontainers.image.created=$BUILD_DATE

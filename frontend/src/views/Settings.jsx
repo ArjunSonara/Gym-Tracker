@@ -199,7 +199,7 @@ export default function Settings() {
 
     <div className="dim small" style={{ textAlign: 'center', marginTop: 4, lineHeight: 1.6 }}>
       Gym Tracker v{__APP_VERSION__}<br />
-      Support: <a href="mailto:fightclubsoap1657@gmail.com">fightclubsoap1657@gmail.com</a>
+      Support: <a href="mailto:arjunsonara1657@gmail.com">arjunsonara1657@gmail.com</a>
     </div>
   </div>
 }
