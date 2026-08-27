@@ -12,6 +12,7 @@ Support: [fightclubsoap1657@gmail.com](mailto:fightclubsoap1657@gmail.com)
 
 ![PWA](https://img.shields.io/badge/PWA-installable-a78bfa?style=flat-square)
 ![React](https://img.shields.io/badge/React-19-38bdf8?style=flat-square&logo=react&logoColor=white)
+![License](https://img.shields.io/badge/License-MIT-emerald?style=flat-square)
 ![Vercel](https://img.shields.io/badge/Deploy-Vercel-black?style=flat-square&logo=vercel)
 ![Docker](https://img.shields.io/badge/Docker-compose-2496ED?style=flat-square&logo=docker&logoColor=white)
 
@@ -64,6 +65,12 @@ Access at `http://localhost:8080`.
 - 📈 **Progression Rules** — Linear progression, Greyskull LP, double progression.
 - 📱 **Mobile & PWA Ready** — Installable to home screen or built for mobile via Capacitor.
 - 📤 **Data Export & Import** — Full backup export/import in JSON.
+
+---
+
+## 📄 License
+
+This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
 
 ---
 

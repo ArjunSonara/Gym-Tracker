@@ -4,7 +4,7 @@
   "private": true,
   "type": "module",
   "main": "server.js",
-  "license": "AGPL-3.0-or-later",
+  "license": "MIT",
   "scripts": {
     "start": "node server.js",
     "test": "node --test"

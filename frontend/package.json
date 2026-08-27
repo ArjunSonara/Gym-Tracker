@@ -12,7 +12,7 @@
     "test:watch": "vitest",
     "test:fatigue-probe": "node scripts/fatigue-monotonic-probe.mjs"
   },
-  "license": "AGPL-3.0-or-later",
+  "license": "MIT",
   "dependencies": {
     "@capacitor/app": "^7.1.2",
     "@capacitor/core": "^7.6.8",
