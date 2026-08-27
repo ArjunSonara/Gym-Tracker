@@ -6,6 +6,7 @@ import { DEMO, DEMO_SEEDED } from '../lib/demo.js'
 import { guestAllowed } from '../lib/guest.js'
 import { MOBILE, nativeLoad, nativeSave, syncReminder, writeAutoBackup } from '../lib/mobile.js'
 import { loadRemote, chooseLocal, forgetRemote, connect } from '../lib/remote.js'
+import { supabase, pushSupabaseState, pullSupabaseState, signOutSupabase } from '../lib/supabase.js'
 
 const KEY = 'gym_state_v1'
 export const DEF = {
@@ -130,14 +131,28 @@ export const useStore = create((set, get) => {
     },
 
     async pushState() {
-      if (!get().user) return
+      const user = get().user
+      if (!user) return
       clearTimeout(pushTm)
+      if (user.provider === 'supabase') {
+        const ok = await pushSupabaseState(get().S)
+        if (ok) localStorage.removeItem('gym_dirty')
+        else localStorage.setItem('gym_dirty', '1')
+        return
+      }
       try { await api('/api/data', { method: 'PUT', body: JSON.stringify({ state: get().S }) }); localStorage.removeItem('gym_dirty') }
       catch (e) { localStorage.setItem('gym_dirty', '1') }
     },
     async pullState() {
+      const user = get().user
       try {
-        const { state } = await api('/api/data')
+        let state = null
+        if (user?.provider === 'supabase') {
+          state = await pullSupabaseState()
+        } else {
+          const res = await api('/api/data')
+          state = res.state
+        }
         const S = get().S
         const dirty = localStorage.getItem('gym_dirty') === '1'
         if (state && (!hasData(S) || ((state._ts || 0) >= (S._ts || 0) && !dirty))) {
@@ -150,7 +165,12 @@ export const useStore = create((set, get) => {
     },
 
     async signOut() {
-      try { await get().pushState(); await api('/api/logout', { method: 'POST', body: '{}' }) } catch (e) { /* */ }
+      const user = get().user
+      if (user?.provider === 'supabase') {
+        await signOutSupabase()
+      } else {
+        try { await get().pushState(); await api('/api/logout', { method: 'POST', body: '{}' }) } catch (e) { /* */ }
+      }
       clearLocalSession()
     },
 
@@ -245,6 +265,44 @@ export const useStore = create((set, get) => {
         set({ ready: true })
         return
       }
+      // Check Supabase session first if configured
+      if (supabase) {
+        try {
+          const { data: { session } } = await supabase.auth.getSession()
+          if (session?.user) {
+            const suUser = {
+              id: session.user.id,
+              email: session.user.email,
+              name: session.user.user_metadata?.full_name || session.user.email?.split('@')[0] || 'Athlete',
+              avatar: session.user.user_metadata?.avatar_url,
+              provider: 'supabase',
+            }
+            get().setUser(suUser)
+            await get().pullState()
+          }
+
+          supabase.auth.onAuthStateChange(async (event, currentSession) => {
+            if ((event === 'SIGNED_IN' || event === 'USER_UPDATED') && currentSession?.user) {
+              const suUser = {
+                id: currentSession.user.id,
+                email: currentSession.user.email,
+                name: currentSession.user.user_metadata?.full_name || currentSession.user.email?.split('@')[0] || 'Athlete',
+                avatar: currentSession.user.user_metadata?.avatar_url,
+                provider: 'supabase',
+              }
+              get().setUser(suUser)
+              await get().pullState()
+              set({ ready: true })
+            } else if (event === 'SIGNED_OUT') {
+              get().setUser(null)
+              set({ ready: true })
+            }
+          })
+        } catch (err) {
+          console.warn('[Supabase] Auth check failed:', err)
+        }
+      }
+
       // Check if there is an active remote server
       try {
         const cfg = await get().loadConfig()

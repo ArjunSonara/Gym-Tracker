@@ -62,10 +62,21 @@ export default function Settings() {
     {/* ---------- account ---------- */}
     <Section title={t('Profile')}>
       {user ? <>
-        <Row icon="personCircle" iconTint="var(--grey)" title={user.name} subtitle={t('Local Profile — tap to change name')} accessory="chevron" onClick={editProfile} />
+        <Row
+          icon="personCircle"
+          iconTint={user.provider === 'supabase' ? 'var(--blue)' : 'var(--grey)'}
+          title={user.name}
+          subtitle={user.provider === 'supabase'
+            ? `${user.email || ''} · ${t('Cloud Synced')}`
+            : t('Local Profile — tap to change name')}
+          accessory={user.provider === 'supabase' ? null : 'chevron'}
+          onClick={user.provider === 'supabase' ? null : editProfile}
+        />
         <Row icon="signOut" iconTint="var(--red)" title={t('Sign out')} danger onClick={() => confirmSheet({
           title: t('Sign out?'),
-          message: t('Your workouts and weights stay saved on this device.'),
+          message: user.provider === 'supabase'
+            ? t('Sign out from your Google account on this device.')
+            : t('Your workouts and weights stay saved on this device.'),
           confirmText: t('Sign out'), danger: true,
           onConfirm: () => { signOut(); nav('/home'); toast(t('Signed out')) }
         })} />
