@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="assets/banner.png" alt="Gym Tracker" width="720">
+<img src="assets/gym-tracker-banner.png" alt="Gym Tracker" width="720">
 
 <br>
 
