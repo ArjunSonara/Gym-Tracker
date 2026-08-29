@@ -59,7 +59,7 @@ jobs:
       - uses: docker/metadata-action@v6
         id: meta
         with:
-          images: ghcr.io/${{ steps.repo.outputs.owner }}/opengym-${{ matrix.image }}
+          images: ghcr.io/${{ steps.repo.outputs.owner }}/gym-tracker-${{ matrix.image }}
           tags: |
             type=raw,value=latest,enable={{is_default_branch}}
             type=semver,pattern={{version}}
