@@ -19,7 +19,22 @@ Plan weekly routines, execute structured guided workouts, master progressive ove
 ![Docker](https://img.shields.io/badge/Docker-Compose-2496ED?style=flat-square&logo=docker&logoColor=white)
 ![WebAuthn](https://img.shields.io/badge/Auth-Passkeys-4f46e5?style=flat-square)
 ![Zero Telemetry](https://img.shields.io/badge/Privacy-100%25%20Local%20%26%20No%20Tracking-f43f5e?style=flat-square)
-[![Vercel](https://img.shields.io/badge/Deploy-Vercel-black?style=flat-square&logo=vercel)](https://vercel.com)
+[![Vercel](https://img.shields.io/badge/Deploy-Vercel-black?style=flat-square&logo=vercel)](https://website-ecru-zeta-50.vercel.app)
+
+<br><br>
+
+<!-- Action Badges -->
+[![Download Android APK](https://img.shields.io/badge/Download%20APK-Android%20(Direct%20v1.2.11)-2ea44f?style=for-the-badge&logo=android&logoColor=white)](https://website-ecru-zeta-50.vercel.app/GymTracker.apk)
+&nbsp;
+[![Official Website](https://img.shields.io/badge/Live%20Website-repforge.vercel.app-0070f3?style=for-the-badge&logo=vercel&logoColor=white)](https://website-ecru-zeta-50.vercel.app)
+&nbsp;
+[![APK Size](https://img.shields.io/badge/Package%20Size-4.66%20MB-f59e0b?style=for-the-badge&logo=googleplay&logoColor=white)](https://website-ecru-zeta-50.vercel.app/GymTracker.apk)
+
+<br><br>
+
+> 📲 **Instant Android Download:** [**Click here to download `GymTracker.apk` directly**](https://website-ecru-zeta-50.vercel.app/GymTracker.apk) — *100% local, no Google Play login, no telemetry, no subscriptions.*
+>
+> 🌐 **Live Web App & Showcase:** [**website-ecru-zeta-50.vercel.app**](https://website-ecru-zeta-50.vercel.app)
 
 <br>
 
@@ -168,7 +183,24 @@ Gym Tracker uses a lightweight, decoupled architecture designed for speed, priva
 
 Choose the setup method that best suits your workflow:
 
-### Option 1: Self-Host with Docker Compose (Recommended for Multi-Device Sync)
+### Option 1: Direct Android APK Install (Recommended for Mobile Lifters)
+
+Get Gym Tracker running directly on your Android phone without needing to compile code or run servers:
+
+1. 📲 **Download the APK:** [**GymTracker.apk (v1.2.11)**](https://website-ecru-zeta-50.vercel.app/GymTracker.apk) *(~4.66 MB)*
+2. Tap the downloaded file in your browser's download manager or Files app.
+3. If prompted by Android, enable **"Install from unknown sources"** for your browser / file manager.
+4. Tap **Install** and launch **Gym Tracker** to begin logging your training!
+
+> **📱 Mobile Highlights:**
+> - **100% Offline & Private:** Your entire workout history is stored in local app storage on your device.
+> - **Zero Battery Drain:** Ultra-lean Capacitor runtime with no background tracking scripts.
+> - **Screen Wake Lock:** Stays awake throughout rest intervals and working sets.
+> - **Instant Backup/Restore:** Export and share complete JSON backups anytime via Android's native share sheet.
+
+---
+
+### Option 2: Self-Host with Docker Compose (Recommended for Multi-Device Sync)
 
 Requirements: [Docker](https://docs.docker.com/get-docker/) with Compose.
 
@@ -190,7 +222,7 @@ docker compose up -d --build
 
 ---
 
-### Option 2: 1-Click Standalone Deployment on Vercel
+### Option 3: 1-Click Standalone Deployment on Vercel
 
 Run Gym Tracker as a fast, client-side web application with local storage persistence:
 
@@ -200,10 +232,11 @@ Run Gym Tracker as a fast, client-side web application with local storage persis
    - **Framework Preset:** `Vite`
    - **Root Directory:** `frontend`
 4. Click **Deploy**!
+5. Or visit our live deployment: [**https://website-ecru-zeta-50.vercel.app**](https://website-ecru-zeta-50.vercel.app)
 
 ---
 
-### Option 3: Local Frontend Development
+### Option 4: Local Frontend Development
 
 Requirements: Node.js (v18+) and npm.
 
@@ -227,7 +260,7 @@ npm test
 
 ---
 
-### Option 4: Standalone Mobile App (Android APK & iOS)
+### Option 5: Build Standalone Mobile App from Source (Android APK & iOS)
 
 Build a native mobile version using Capacitor that stores all data locally in the device's private storage:
 

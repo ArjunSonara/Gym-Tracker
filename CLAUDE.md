@@ -4,8 +4,8 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What this is
 
-openGym is a self-hosted gym & body-weight tracker PWA. Two containers (`api` + `web`) plus a
-`./data` folder the user owns — no third-party account, no telemetry. Passkey (WebAuthn) login,
+Gym Tracker is a private, modern gym & body-weight tracker PWA. Two containers (`api` + `web`) plus a
+`./data` folder the user owns — no third-party account, no telemetry. Passkey (WebAuthn) & Google login,
 installable as a home-screen app, optional Capacitor shells for standalone Android/iOS builds.
 License: AGPL-3.0-or-later.
 

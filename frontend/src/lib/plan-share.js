@@ -101,7 +101,7 @@ export function parsePlan(raw) {
     data = raw
   }
   if (!data || (!data.gymtracker_plan && !data.opengym_plan) || !Array.isArray(data.routines)) {
-    throw new Error(t('this isn’t an openGym plan file'))
+    throw new Error(t('this isn’t a Gym Tracker plan file'))
   }
   const customEx = (Array.isArray(data.customEx) ? data.customEx : []).filter(c => c && c.id)
   const known = new Set(customEx.map(c => c.id))
