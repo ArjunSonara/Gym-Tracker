@@ -18,23 +18,23 @@ Plan weekly routines, execute structured guided workouts, master progressive ove
 ![PWA](https://img.shields.io/badge/PWA-Installable-a78bfa?style=flat-square)
 ![Docker](https://img.shields.io/badge/Docker-Compose-2496ED?style=flat-square&logo=docker&logoColor=white)
 ![WebAuthn](https://img.shields.io/badge/Auth-Passkeys-4f46e5?style=flat-square)
-![Zero Telemetry](https://img.shields.io/badge/Privacy-100%25%20Local%20%26%20No%20Tracking-f43f5e?style=flat-square)
-[![Vercel](https://img.shields.io/badge/Deploy-Vercel-black?style=flat-square&logo=vercel)](https://website-ecru-zeta-50.vercel.app)
+[![Zero Telemetry](https://img.shields.io/badge/Privacy-100%25%20Local%20%26%20No%20Tracking-f43f5e?style=flat-square)](https://gym-tracker-tawny-seven.vercel.app)
+[![Vercel](https://img.shields.io/badge/Deploy-Vercel-black?style=flat-square&logo=vercel)](https://gym-tracker-tawny-seven.vercel.app)
 
 <br><br>
 
 <!-- Action Badges -->
-[![Download Android APK](https://img.shields.io/badge/Download%20APK-Android%20(Direct%20v1.2.11)-2ea44f?style=for-the-badge&logo=android&logoColor=white)](https://website-ecru-zeta-50.vercel.app/GymTracker.apk)
+[![Download Android APK](https://img.shields.io/badge/Download%20APK-Android%20(Direct%20v1.2.11)-2ea44f?style=for-the-badge&logo=android&logoColor=white)](https://gym-tracker-tawny-seven.vercel.app/GymTracker.apk)
 &nbsp;
-[![Official Website](https://img.shields.io/badge/Live%20Website-repforge.vercel.app-0070f3?style=for-the-badge&logo=vercel&logoColor=white)](https://website-ecru-zeta-50.vercel.app)
+[![Official Website](https://img.shields.io/badge/Live%20Website-gym-tracker-tawny-seven.vercel.app-0070f3?style=for-the-badge&logo=vercel&logoColor=white)](https://gym-tracker-tawny-seven.vercel.app)
 &nbsp;
-[![APK Size](https://img.shields.io/badge/Package%20Size-4.66%20MB-f59e0b?style=for-the-badge&logo=googleplay&logoColor=white)](https://website-ecru-zeta-50.vercel.app/GymTracker.apk)
+[![APK Size](https://img.shields.io/badge/Package%20Size-4.66%20MB-f59e0b?style=for-the-badge&logo=googleplay&logoColor=white)](https://gym-tracker-tawny-seven.vercel.app/GymTracker.apk)
 
 <br><br>
 
-> 📲 **Instant Android Download:** [**Click here to download `GymTracker.apk` directly**](https://website-ecru-zeta-50.vercel.app/GymTracker.apk) — *100% local, no Google Play login, no telemetry, no subscriptions.*
+> 📲 **Instant Android Download:** [**Click here to download `GymTracker.apk` directly**](https://gym-tracker-tawny-seven.vercel.app/GymTracker.apk) — *100% local, no Google Play login, no telemetry, no subscriptions.*
 >
-> 🌐 **Live Web App & Showcase:** [**website-ecru-zeta-50.vercel.app**](https://website-ecru-zeta-50.vercel.app)
+> 🌐 **Live Web App & Showcase:** [**gym-tracker-tawny-seven.vercel.app**](https://gym-tracker-tawny-seven.vercel.app)
 
 <br>
 
@@ -187,7 +187,7 @@ Choose the setup method that best suits your workflow:
 
 Get Gym Tracker running directly on your Android phone without needing to compile code or run servers:
 
-1. 📲 **Download the APK:** [**GymTracker.apk (v1.2.11)**](https://website-ecru-zeta-50.vercel.app/GymTracker.apk) *(~4.66 MB)*
+1. 📲 **Download the APK:** [**GymTracker.apk (v1.2.11)**](https://gym-tracker-tawny-seven.vercel.app/GymTracker.apk) *(~4.66 MB)*
 2. Tap the downloaded file in your browser's download manager or Files app.
 3. If prompted by Android, enable **"Install from unknown sources"** for your browser / file manager.
 4. Tap **Install** and launch **Gym Tracker** to begin logging your training!
@@ -232,7 +232,7 @@ Run Gym Tracker as a fast, client-side web application with local storage persis
    - **Framework Preset:** `Vite`
    - **Root Directory:** `frontend`
 4. Click **Deploy**!
-5. Or visit our live deployment: [**https://website-ecru-zeta-50.vercel.app**](https://website-ecru-zeta-50.vercel.app)
+5. Or visit our live deployment: [**https://gym-tracker-tawny-seven.vercel.app**](https://gym-tracker-tawny-seven.vercel.app)
 
 ---
 
